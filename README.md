@@ -119,13 +119,13 @@ The command includes:
 
 2. Select `SQL command` to execute and initialize the project data table structure
 
-> config/config.yaml 配置 db.init_table 默认开启表结构初始化，则不需要构建数据表结构
+> If db.init_table is configured to be enabled by default in config/config.yaml, there is no need to build the data table structure.
 
 ![SqlCommand](./pics/SqlCommand.png)
 
 3. Open Postman, import data, and conduct testing
 
-> 数据在 postman/wallet.postman_collection.json
+> Data is in postman/wallet.postman_collection.json
 
 ![Postman](./pics/Postman.png)
 

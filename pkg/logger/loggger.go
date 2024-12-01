@@ -14,8 +14,8 @@ import (
 
 var Logger *zap.SugaredLogger
 
-func InitZapLogger(filepath, infoFilename, warnFilename, errFilename, fileExt, callerLoc string) (*zap.SugaredLogger, error) {
-	cfg := &zap.Config{
+func initConf(filepath, callerLoc string) *zap.Config {
+	return &zap.Config{
 		Level:       zap.NewAtomicLevelAt(zap.DebugLevel),
 		Development: true,
 		Encoding:    "json",
@@ -39,6 +39,10 @@ func InitZapLogger(filepath, infoFilename, warnFilename, errFilename, fileExt, c
 		OutputPaths:      []string{"stdout", filepath + "/output.txt"},
 		ErrorOutputPaths: []string{"stderr"},
 	}
+}
+
+func InitZapLogger(filepath, infoFilename, warnFilename, errFilename, fileExt, callerLoc string) (*zap.SugaredLogger, error) {
+	cfg := initConf(filepath, callerLoc)
 	logger, err := newZapLogger(filepath, infoFilename, warnFilename, errFilename, fileExt, cfg)
 
 	return logger.Sugar(), err
@@ -109,9 +113,9 @@ func getLogWriter(filePath, fileExt string) (zapcore.WriteSyncer, error) {
 	return zapcore.AddSync(warnIoWriter), nil
 }
 
-// getWriter 日志文件切割，按天
+// getWriter Log file rotation, daily
 func getWriter(filename, fileExt string) (io.Writer, error) {
-	// 保存30天内的日志，每24小时(整点)分割一次日志
+	// Save logs within 30 days, rotate logs every 24 hours (at midnight)
 	hook, err := fileRotatelogs.New(
 		filename+"_%Y%m%d."+fileExt,
 		fileRotatelogs.WithLinkName(filename),

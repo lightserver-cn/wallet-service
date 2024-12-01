@@ -1,7 +1,7 @@
-app_name: ls-seek-friend-server
+app_name: wallet-service
 app_version: 1.0.0
 app_mode: debug
-api_addr: 0.0.0.0:8888
+api_addr: 0.0.0.0:8080
 
 db:
   driver: postgres

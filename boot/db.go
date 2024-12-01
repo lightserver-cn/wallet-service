@@ -36,6 +36,12 @@ func initDB() error {
 		return err
 	}
 
+	// for test
+	_, _ = db.Exec("DROP DATABASE IF EXISTS test_postgres")
+	_, _ = db.Exec("CREATE DATABASE test_postgres")
+	_, _ = db.Exec("DROP DATABASE IF EXISTS db_test")
+	_, _ = db.Exec("CREATE DATABASE db_test")
+
 	if dbConf.InitTable {
 		var content []byte
 		content, err = os.ReadFile(ddlPath)

@@ -2,7 +2,6 @@ package boot
 
 import (
 	"errors"
-	"log"
 	"os"
 	"server/config"
 
@@ -24,8 +23,6 @@ func initConfig() error {
 	if err != nil {
 		return err
 	}
-
-	log.Printf("------ ENV:%s envCnfPath:%s Config:%v\n", env, envCnfPath, config.Config)
 
 	return nil
 }

@@ -59,15 +59,15 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 26 Nov 2024 03:24:07 GMT"
+									"value": "Sun, 01 Dec 2024 15:52:08 GMT"
 								},
 								{
 									"key": "Content-Length",
-									"value": "148"
+									"value": "146"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 1,\n    \"username\": \"Lucy\",\n    \"email\": \"Lucy@gmail.com\",\n    \"status\": 1,\n    \"created_at\": \"2024-11-26T02:11:18.460003Z\",\n    \"updated_at\": \"2024-11-26T02:11:18.460003Z\"\n}"
+							"body": "{\n    \"id\": 1,\n    \"username\": \"Bob\",\n    \"email\": \"Bob@gmail.com\",\n    \"status\": 1,\n    \"created_at\": \"2024-12-01T15:51:53.575087Z\",\n    \"updated_at\": \"2024-12-01T15:51:53.575087Z\"\n}"
 						},
 						{
 							"name": "user not found",
@@ -109,7 +109,7 @@
 							"body": "{\n    \"error\": \"user not found\"\n}"
 						},
 						{
-							"name": "Invalid user ID",
+							"name": "Validation failed",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -137,15 +137,54 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 26 Nov 2024 03:25:11 GMT"
+									"value": "Sun, 01 Dec 2024 15:50:29 GMT"
 								},
 								{
 									"key": "Content-Length",
-									"value": "27"
+									"value": "89"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": \"Invalid user ID\"\n}"
+							"body": "{\n    \"details\": \"strconv.ParseInt: parsing \\\"a\\\": invalid syntax\",\n    \"error\": \"Validation failed\"\n}"
+						},
+						{
+							"name": "Invalid UID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/users/0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Dec 2024 15:51:07 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Invalid UID\"\n}"
 						}
 					]
 				},
@@ -156,7 +195,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"Bob\",\n    \"email\": \"Bob@gmail.com\",\n    \"password\": \"123123\"\n}",
+							"raw": "{\n    \"username\": \"Lucy\",\n    \"email\": \"Lucy@gmail.com\",\n    \"password\": \"123123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -184,7 +223,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"username\": \"name1\",\n    \"email\": \"email1@gmail.com\",\n    \"password\": \"123123\"\n}",
+									"raw": "{\n    \"username\": \"Bob\",\n    \"email\": \"Bob@gmail.com\",\n    \"password\": \"123123\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -214,15 +253,15 @@
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 27 Nov 2024 01:41:59 GMT"
+									"value": "Sun, 01 Dec 2024 15:51:53 GMT"
 								},
 								{
 									"key": "Content-Length",
-									"value": "137"
+									"value": "132"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 3,\n    \"username\": \"name1\",\n    \"email\": \"email1@gmail.com\",\n    \"status\": 2,\n    \"created_at\": \"0001-01-01T00:00:00Z\",\n    \"updated_at\": \"0001-01-01T00:00:00Z\"\n}"
+							"body": "{\n    \"id\": 1,\n    \"username\": \"Bob\",\n    \"email\": \"Bob@gmail.com\",\n    \"status\": 2,\n    \"created_at\": \"0001-01-01T00:00:00Z\",\n    \"updated_at\": \"0001-01-01T00:00:00Z\"\n}"
 						},
 						{
 							"name": "username repeated",
@@ -231,7 +270,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"username\": \"name1\",\n    \"email\": \"email1@gmail.com\",\n    \"password\": \"123123\"\n}",
+									"raw": "{\n    \"username\": \"Bob\",\n    \"email\": \"Bob@gmail.com\",\n    \"password\": \"123123\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -261,7 +300,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 27 Nov 2024 01:42:35 GMT"
+									"value": "Sun, 01 Dec 2024 15:52:28 GMT"
 								},
 								{
 									"key": "Content-Length",
@@ -278,7 +317,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"username\": \"name\",\n    \"email\": \"email1@gmail.com\",\n    \"password\": \"123123\"\n}",
+									"raw": "{\n    \"username\": \"Bob1\",\n    \"email\": \"Bob@gmail.com\",\n    \"password\": \"123123\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -308,7 +347,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 27 Nov 2024 01:43:06 GMT"
+									"value": "Sun, 01 Dec 2024 15:52:54 GMT"
 								},
 								{
 									"key": "Content-Length",
@@ -319,60 +358,13 @@
 							"body": "{\n    \"error\": \"The email has been repeated, please change to a new email.\"\n}"
 						},
 						{
-							"name": "password required",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"username\": \"name\",\n    \"email\": \"email@gmail.com\",\n    \"password\": \"\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/users",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"users"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 27 Nov 2024 01:43:24 GMT"
-								},
-								{
-									"key": "Content-Length",
-									"value": "32"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": \"password is required\"\n}"
-						},
-						{
 							"name": "username required",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"username\": \"\",\n    \"email\": \"email@gmail.com\",\n    \"password\": \"\"\n}",
+									"raw": "{\n    \"username\": \"\",\n    \"email\": \"Bob@gmail.com\",\n    \"password\": \"123123\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -402,7 +394,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 27 Nov 2024 01:43:42 GMT"
+									"value": "Sun, 01 Dec 2024 15:53:47 GMT"
 								},
 								{
 									"key": "Content-Length",
@@ -419,7 +411,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"username\": \"name\",\n    \"email\": \"\",\n    \"password\": \"\"\n}",
+									"raw": "{\n    \"username\": \"Bob1\",\n    \"email\": \"\",\n    \"password\": \"123123\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -449,7 +441,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 27 Nov 2024 01:44:13 GMT"
+									"value": "Sun, 01 Dec 2024 15:54:10 GMT"
 								},
 								{
 									"key": "Content-Length",
@@ -458,6 +450,53 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"error\": \"email is required\"\n}"
+						},
+						{
+							"name": "password required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"Bob\",\n    \"email\": \"Bob@gmail.com\",\n    \"password\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Dec 2024 15:54:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"password is required\"\n}"
 						}
 					]
 				}
@@ -606,6 +645,46 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"details\": \"strconv.ParseInt: parsing \\\"aaa\\\": invalid syntax\",\n    \"error\": \"Validation failed\"\n}"
+						},
+						{
+							"name": "Invalid UID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/wallets/0/balance",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"wallets",
+										"0",
+										"balance"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Dec 2024 15:56:27 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Invalid UID\"\n}"
 						}
 					]
 				},
@@ -615,7 +694,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/wallets/1/transactions?page=1&page_size=10&type=1",
+							"raw": "http://localhost:8080/api/wallets/1/transactions?page=1&page_size=10&type=0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -638,19 +717,19 @@
 								},
 								{
 									"key": "type",
-									"value": "1"
+									"value": "0"
 								}
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "success",
+							"name": "null",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8080/api/wallets/1/transactions?page=1&page_size=10",
+									"raw": "http://localhost:8080/api/wallets/1/transactions?page=1&page_size=10&type=0",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -670,56 +749,10 @@
 										{
 											"key": "page_size",
 											"value": "10"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 26 Nov 2024 14:47:53 GMT"
-								},
-								{
-									"key": "Content-Length",
-									"value": "669"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"list\": [\n        {\n            \"id\": 3,\n            \"sender_wallet_id\": 1,\n            \"receiver_wallet_id\": 2,\n            \"amount\": \"2\",\n            \"transaction_type\": 3,\n            \"created_at\": \"2024-11-26T02:13:10.86473Z\",\n            \"sender_username\": \"Lucy\",\n            \"receiver_username\": \"Bob\",\n            \"transaction_type_name\": \"transfer\"\n        },\n        {\n            \"id\": 2,\n            \"sender_wallet_id\": 1,\n            \"receiver_wallet_id\": 0,\n            \"amount\": \"10\",\n            \"transaction_type\": 2,\n            \"created_at\": \"2024-11-26T02:12:17.789557Z\",\n            \"sender_username\": \"Lucy\",\n            \"receiver_username\": \"\",\n            \"transaction_type_name\": \"withdraw\"\n        },\n        {\n            \"id\": 1,\n            \"sender_wallet_id\": 0,\n            \"receiver_wallet_id\": 1,\n            \"amount\": \"50\",\n            \"transaction_type\": 1,\n            \"created_at\": \"2024-11-26T02:12:09.913403Z\",\n            \"sender_username\": \"\",\n            \"receiver_username\": \"Lucy\",\n            \"transaction_type_name\": \"deposit\"\n        }\n    ],\n    \"has_more\": false\n}"
-						},
-						{
-							"name": "null",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:8080/api/wallets/999/transactions?page=1&page_size=10",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"wallets",
-										"999",
-										"transactions"
-									],
-									"query": [
-										{
-											"key": "page",
-											"value": "1"
 										},
 										{
-											"key": "page_size",
-											"value": "10"
+											"key": "type",
+											"value": "0"
 										}
 									]
 								}
@@ -734,7 +767,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 26 Nov 2024 14:48:19 GMT"
+									"value": "Sun, 01 Dec 2024 15:57:51 GMT"
 								},
 								{
 									"key": "Content-Length",
@@ -745,12 +778,12 @@
 							"body": "{\n    \"list\": null,\n    \"has_more\": false\n}"
 						},
 						{
-							"name": "err",
+							"name": "Validation failed",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8080/api/wallets/aaa/transactions?page=1&page_size=10",
+									"raw": "http://localhost:8080/api/wallets/a/transactions?page=1&page_size=10&type=0",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -759,7 +792,7 @@
 									"path": [
 										"api",
 										"wallets",
-										"aaa",
+										"a",
 										"transactions"
 									],
 									"query": [
@@ -770,6 +803,10 @@
 										{
 											"key": "page_size",
 											"value": "10"
+										},
+										{
+											"key": "type",
+											"value": "0"
 										}
 									]
 								}
@@ -784,15 +821,123 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 26 Nov 2024 14:48:45 GMT"
+									"value": "Sun, 01 Dec 2024 16:04:29 GMT"
 								},
 								{
 									"key": "Content-Length",
-									"value": "61"
+									"value": "89"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": \"strconv.ParseInt: parsing \\\"aaa\\\": invalid syntax\"\n}"
+							"body": "{\n    \"details\": \"strconv.ParseInt: parsing \\\"a\\\": invalid syntax\",\n    \"error\": \"Validation failed\"\n}"
+						},
+						{
+							"name": "Invalid UID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/wallets/0/transactions?page=1&page_size=10&type=0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"wallets",
+										"0",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "page_size",
+											"value": "10"
+										},
+										{
+											"key": "type",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Dec 2024 16:05:01 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Invalid UID\"\n}"
+						},
+						{
+							"name": "Successful",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/wallets/1/transactions?page=1&page_size=10&type=0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"wallets",
+										"1",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "page_size",
+											"value": "10"
+										},
+										{
+											"key": "type",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Dec 2024 16:05:23 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "667"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"list\": [\n        {\n            \"id\": 3,\n            \"sender_wallet_id\": 1,\n            \"receiver_wallet_id\": 2,\n            \"amount\": \"2\",\n            \"transaction_type\": 3,\n            \"created_at\": \"2024-12-01T16:03:11.092583Z\",\n            \"sender_username\": \"Bob\",\n            \"receiver_username\": \"Lucy\",\n            \"transaction_type_name\": \"transfer\"\n        },\n        {\n            \"id\": 2,\n            \"sender_wallet_id\": 1,\n            \"receiver_wallet_id\": 0,\n            \"amount\": \"10\",\n            \"transaction_type\": 2,\n            \"created_at\": \"2024-12-01T16:02:57.860085Z\",\n            \"sender_username\": \"Bob\",\n            \"receiver_username\": \"\",\n            \"transaction_type_name\": \"withdraw\"\n        },\n        {\n            \"id\": 1,\n            \"sender_wallet_id\": 0,\n            \"receiver_wallet_id\": 1,\n            \"amount\": \"50\",\n            \"transaction_type\": 1,\n            \"created_at\": \"2024-12-01T15:58:02.62354Z\",\n            \"sender_username\": \"\",\n            \"receiver_username\": \"Bob\",\n            \"transaction_type_name\": \"deposit\"\n        }\n    ],\n    \"has_more\": false\n}"
 						}
 					]
 				},
@@ -803,7 +948,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"amount\": \"50.00\"\n}",
+							"raw": "{\n    \"amount\": 50.00\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -833,7 +978,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"amount\": \"50.00\"\n}",
+									"raw": "{\n    \"amount\": 50.00\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -874,104 +1019,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"successful\"\n}"
-						},
-						{
-							"name": "no rows",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"amount\": \"50.00\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/wallets/999/deposit",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"wallets",
-										"999",
-										"deposit"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 26 Nov 2024 16:55:49 GMT"
-								},
-								{
-									"key": "Content-Length",
-									"value": "38"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": \"sql: no rows in result set\"\n}"
-						},
-						{
-							"name": "deposit amount must be positive",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"amount\": \"-1\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/wallets/1/deposit",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"wallets",
-										"1",
-										"deposit"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 26 Nov 2024 16:56:11 GMT"
-								},
-								{
-									"key": "Content-Length",
-									"value": "43"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": \"deposit amount must be positive\"\n}"
 						},
 						{
 							"name": "maximum",
@@ -1023,13 +1070,62 @@
 							"body": "{\n    \"error\": \"deposit would exceed the maximum allowed balance of 1000000\"\n}"
 						},
 						{
-							"name": "error",
+							"name": "no rows",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"amount\": \"50.00\"\n}",
+									"raw": "{\n    \"amount\": 50.00\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/wallets/999/deposit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"wallets",
+										"999",
+										"deposit"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Dec 2024 15:58:58 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"details\": \"sql: no rows in result set\",\n    \"error\": \"internal server error\"\n}"
+						},
+						{
+							"name": "Validation failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\": 50.00\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1061,15 +1157,113 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 26 Nov 2024 16:57:34 GMT"
+									"value": "Sun, 01 Dec 2024 16:00:08 GMT"
 								},
 								{
 									"key": "Content-Length",
-									"value": "61"
+									"value": "91"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": \"strconv.ParseInt: parsing \\\"aaa\\\": invalid syntax\"\n}"
+							"body": "{\n    \"details\": \"strconv.ParseInt: parsing \\\"aaa\\\": invalid syntax\",\n    \"error\": \"Validation failed\"\n}"
+						},
+						{
+							"name": "Invalid Amount",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\": -50.00\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/wallets/1/deposit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"wallets",
+										"1",
+										"deposit"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Dec 2024 16:01:06 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Invalid Amount\"\n}"
+						},
+						{
+							"name": "maximum",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\": 999999999999\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/wallets/1/deposit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"wallets",
+										"1",
+										"deposit"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Dec 2024 16:01:58 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "105"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"details\": \"deposit would exceed the maximum allowed balance of 1000000\",\n    \"error\": \"internal server error\"\n}"
 						}
 					]
 				},
@@ -1080,7 +1274,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"amount\": \"10.00\"\n}",
+							"raw": "{\n    \"amount\": 10.00\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1104,13 +1298,13 @@
 					},
 					"response": [
 						{
-							"name": "successful",
+							"name": "Successful",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"amount\": \"10.00\"\n}",
+									"raw": "{\n    \"amount\": 10.00\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1142,7 +1336,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 26 Nov 2024 16:57:13 GMT"
+									"value": "Sun, 01 Dec 2024 16:02:57 GMT"
 								},
 								{
 									"key": "Content-Length",
@@ -1150,7 +1344,105 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"successful\"\n}"
+							"body": "{\n    \"message\": \"Successful\"\n}"
+						},
+						{
+							"name": "Validation failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\": 10.00\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/wallets/a/withdraw",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"wallets",
+										"a",
+										"withdraw"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Dec 2024 16:07:49 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"details\": \"strconv.ParseInt: parsing \\\"a\\\": invalid syntax\",\n    \"error\": \"Validation failed\"\n}"
+						},
+						{
+							"name": "Invalid UID",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\": 10.00\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/wallets/0/withdraw",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"wallets",
+										"0",
+										"withdraw"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Dec 2024 16:08:08 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Invalid UID\"\n}"
 						},
 						{
 							"name": "no rows",
@@ -1159,7 +1451,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"amount\": \"10.00\"\n}",
+									"raw": "{\n    \"amount\": 10.00\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1191,24 +1483,24 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 26 Nov 2024 16:58:05 GMT"
+									"value": "Sun, 01 Dec 2024 16:08:27 GMT"
 								},
 								{
 									"key": "Content-Length",
-									"value": "38"
+									"value": "72"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": \"sql: no rows in result set\"\n}"
+							"body": "{\n    \"details\": \"sql: no rows in result set\",\n    \"error\": \"internal server error\"\n}"
 						},
 						{
-							"name": "withdraw amount must be positive",
+							"name": "Invalid Amount",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"amount\": \"-1\"\n}",
+									"raw": "{\n    \"amount\": -10.00\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1216,7 +1508,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/wallets/1/withdraw",
+									"raw": "http://localhost:8080/api/wallets/999/withdraw",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1225,105 +1517,7 @@
 									"path": [
 										"api",
 										"wallets",
-										"1",
-										"withdraw"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 26 Nov 2024 16:58:31 GMT"
-								},
-								{
-									"key": "Content-Length",
-									"value": "44"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": \"withdraw amount must be positive\"\n}"
-						},
-						{
-							"name": "insufficient balance for withdrawal",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"amount\": \"999999999999\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/wallets/1/withdraw",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"wallets",
-										"1",
-										"withdraw"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 26 Nov 2024 16:59:15 GMT"
-								},
-								{
-									"key": "Content-Length",
-									"value": "47"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": \"insufficient balance for withdrawal\"\n}"
-						},
-						{
-							"name": "error",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"amount\": \"999999999999\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/wallets/aaa/withdraw",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"wallets",
-										"aaa",
+										"999",
 										"withdraw"
 									]
 								}
@@ -1338,15 +1532,64 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 26 Nov 2024 16:59:34 GMT"
+									"value": "Sun, 01 Dec 2024 16:08:56 GMT"
 								},
 								{
 									"key": "Content-Length",
-									"value": "61"
+									"value": "26"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": \"strconv.ParseInt: parsing \\\"aaa\\\": invalid syntax\"\n}"
+							"body": "{\n    \"error\": \"Invalid Amount\"\n}"
+						},
+						{
+							"name": "insufficient balance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\": 999999999999\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/wallets/1/withdraw",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"wallets",
+										"1",
+										"withdraw"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Dec 2024 16:09:23 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "81"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"details\": \"insufficient balance for withdrawal\",\n    \"error\": \"internal server error\"\n}"
 						}
 					]
 				},
@@ -1357,7 +1600,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"to_uid\": 2,\n    \"amount\": 2.00\n}",
+							"raw": "{\n    \"to_uid\": 2,\n    \"amount\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1381,13 +1624,13 @@
 					},
 					"response": [
 						{
-							"name": "successful",
+							"name": "Successful",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"to_uid\": 2,\n    \"amount\": 2.00\n}",
+									"raw": "{\n    \"to_uid\": 2,\n    \"amount\": 2\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1419,24 +1662,24 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 26 Nov 2024 17:00:22 GMT"
+									"value": "Sun, 01 Dec 2024 16:03:11 GMT"
 								},
 								{
 									"key": "Content-Length",
-									"value": "33"
+									"value": "24"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"Transfer successful\"\n}"
+							"body": "{\n    \"message\": \"Successful\"\n}"
 						},
 						{
-							"name": "no rows",
+							"name": "Validation failed",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"to_uid\": 2,\n    \"amount\": 2.00\n}",
+									"raw": "{\n    \"to_uid\": 2,\n    \"amount\": 2\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1444,7 +1687,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/api/wallets/9999/transfer",
+									"raw": "http://localhost:8080/api/wallets/a/transfer",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1453,56 +1696,7 @@
 									"path": [
 										"api",
 										"wallets",
-										"9999",
-										"transfer"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 26 Nov 2024 17:00:45 GMT"
-								},
-								{
-									"key": "Content-Length",
-									"value": "38"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": \"sql: no rows in result set\"\n}"
-						},
-						{
-							"name": "Invalid Amount",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"to_uid\": 2,\n    \"amount\": -1\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/wallets/1/transfer",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"wallets",
-										"1",
+										"a",
 										"transfer"
 									]
 								}
@@ -1517,7 +1711,154 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 26 Nov 2024 17:01:26 GMT"
+									"value": "Sun, 01 Dec 2024 16:10:13 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"details\": \"strconv.ParseInt: parsing \\\"a\\\": invalid syntax\",\n    \"error\": \"Validation failed\"\n}"
+						},
+						{
+							"name": "Invalid UID",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"to_uid\": 2,\n    \"amount\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/wallets/0/transfer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"wallets",
+										"0",
+										"transfer"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Dec 2024 16:10:36 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Invalid UID\"\n}"
+						},
+						{
+							"name": "no rows",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"to_uid\": 2,\n    \"amount\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/wallets/999/transfer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"wallets",
+										"999",
+										"transfer"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Dec 2024 16:10:59 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"details\": \"sql: no rows in result set\",\n    \"error\": \"Transfer failed\"\n}"
+						},
+						{
+							"name": "Invalid Amount",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"to_uid\": 2,\n    \"amount\": -2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/wallets/999/transfer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"wallets",
+										"999",
+										"transfer"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Dec 2024 16:11:21 GMT"
 								},
 								{
 									"key": "Content-Length",
@@ -1528,7 +1869,7 @@
 							"body": "{\n    \"error\": \"Invalid Amount\"\n}"
 						},
 						{
-							"name": "insufficient balance for transfer",
+							"name": "insufficient balance",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -1566,64 +1907,15 @@
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 26 Nov 2024 17:01:03 GMT"
+									"value": "Sun, 01 Dec 2024 16:11:47 GMT"
 								},
 								{
 									"key": "Content-Length",
-									"value": "45"
+									"value": "73"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": \"insufficient balance for transfer\"\n}"
-						},
-						{
-							"name": "error",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"to_uid\": 2,\n    \"amount\": -1\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:8080/api/wallets/aaaa/transfer",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"wallets",
-										"aaaa",
-										"transfer"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 26 Nov 2024 17:01:48 GMT"
-								},
-								{
-									"key": "Content-Length",
-									"value": "62"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": \"strconv.ParseInt: parsing \\\"aaaa\\\": invalid syntax\"\n}"
+							"body": "{\n    \"details\": \"insufficient balance for transfer\",\n    \"error\": \"Transfer failed\"\n}"
 						}
 					]
 				}

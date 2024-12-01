@@ -36,7 +36,7 @@ func (u *UserRepo) CreateUser(ctx *gin.Context, mod *model.User) (*model.User, e
 	var id int64
 	err := u.db.QueryRowContext(ctx, model.QueryUserInsert, mod.Username, mod.Email, mod.PasswordHash).Scan(&id)
 	if err != nil {
-		u.logger.Errorf("CreateUser QueryRowContext err: %s", err.Error())
+		u.logger.Errorf("CreateUser QueryUserInsert err: %s", err.Error())
 		return mod, err
 	}
 

@@ -58,8 +58,3 @@ CREATE TABLE "public"."t_wallet"
 ) WITH (oids = false);
 
 CREATE INDEX "wallet_uid" ON "public"."t_wallet" USING btree ("uid");
-
-DROP DATABASE IF EXISTS test_postgres;
-CREATE DATABASE test_postgres;
-DROP DATABASE IF EXISTS db_test;
-CREATE DATABASE db_test;

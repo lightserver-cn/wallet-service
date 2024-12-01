@@ -54,6 +54,7 @@ func (w *WalletRepo) CreateWallet(ctx *gin.Context, mod *model.Wallet) (*model.W
 func (w *WalletRepo) Deposit(ctx *gin.Context, uid int64, amount decimal.Decimal) error {
 	tx, err := w.db.BeginTx(ctx, nil)
 	if err != nil {
+		w.logger.Errorf("Deposit failed to begin transaction: %v", err)
 		return err
 	}
 
@@ -73,11 +74,13 @@ func (w *WalletRepo) Deposit(ctx *gin.Context, uid int64, amount decimal.Decimal
 
 	_, err = tx.ExecContext(ctx, model.QueryWalletDeposit, amount, uid, model.MaxBalance)
 	if err != nil {
+		w.logger.Errorf("Deposit failed to query wallet deposit: %v", err)
 		return err
 	}
 
 	_, err = tx.ExecContext(ctx, model.QueryInsertTransaction, 0, uid, amount, model.TransactionTypeDeposit)
 	if err != nil {
+		w.logger.Errorf("Deposit failed to query insert transaction: %v", err)
 		return err
 	}
 
@@ -88,6 +91,7 @@ func (w *WalletRepo) Deposit(ctx *gin.Context, uid int64, amount decimal.Decimal
 func (w *WalletRepo) Withdraw(ctx *gin.Context, uid int64, amount decimal.Decimal) error {
 	tx, err := w.db.BeginTx(ctx, nil)
 	if err != nil {
+		w.logger.Errorf("Withdraw failed to begin transaction: %v", err)
 		return err
 	}
 
@@ -107,11 +111,13 @@ func (w *WalletRepo) Withdraw(ctx *gin.Context, uid int64, amount decimal.Decima
 
 	_, err = tx.ExecContext(ctx, model.QueryWalletWithdraw, amount, uid, model.MinBalance)
 	if err != nil {
+		w.logger.Errorf("Withdraw failed to query wallet withdraw: %v", err)
 		return err
 	}
 
 	_, err = tx.ExecContext(ctx, model.QueryInsertTransaction, uid, 0, amount, model.TransactionTypeWithdraw)
 	if err != nil {
+		w.logger.Errorf("Withdraw failed to query insert transaction: %v", err)
 		return err
 	}
 
@@ -121,6 +127,7 @@ func (w *WalletRepo) Withdraw(ctx *gin.Context, uid int64, amount decimal.Decima
 func (w *WalletRepo) Transfer(ctx *gin.Context, fromUID, toUID int64, amount decimal.Decimal) error {
 	tx, err := w.db.BeginTx(ctx, nil)
 	if err != nil {
+		w.logger.Errorf("Transfer failed to begin transaction: %v", err)
 		return err
 	}
 
@@ -142,18 +149,21 @@ func (w *WalletRepo) Transfer(ctx *gin.Context, fromUID, toUID int64, amount dec
 	_, err = tx.ExecContext(ctx, model.QueryWalletWithdraw, amount, fromUID, model.MinBalance)
 	if err != nil {
 		_ = tx.Rollback()
+		w.logger.Errorf("Transfer failed to query wallet withdraw: %v", err)
 		return err
 	}
 
 	_, err = tx.ExecContext(ctx, model.QueryWalletTransfer, amount, toUID, model.MaxBalance)
 	if err != nil {
 		_ = tx.Rollback()
+		w.logger.Errorf("Transfer failed to query wallet transfer: %v", err)
 		return err
 	}
 
 	_, err = tx.ExecContext(ctx, model.QueryInsertTransaction, fromUID, toUID, amount, model.TransactionTypeTransfer)
 	if err != nil {
 		_ = tx.Rollback()
+		w.logger.Errorf("Transfer failed to query inert transaction: %v", err)
 		return err
 	}
 
@@ -166,6 +176,7 @@ func (w *WalletRepo) Balance(ctx *gin.Context, uid int64) (decimal.Decimal, erro
 	var balance decimal.Decimal
 	err := w.db.QueryRowContext(ctx, model.QueryWalletBalance, uid).Scan(&balance)
 	if err != nil {
+		w.logger.Errorf("Balance failed to get query wallet balance: %v", err)
 		return decimal.Zero, err
 	}
 
@@ -188,6 +199,7 @@ func (w *WalletRepo) queryModelByField(ctx *gin.Context, field string, value any
 			return mod, err
 		}
 
+		w.logger.Errorf("queryModelByField failed to query wallet by field: %v", err)
 		return mod, err
 	}
 

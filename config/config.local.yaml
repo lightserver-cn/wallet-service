@@ -1,0 +1,34 @@
+app_name: ls-seek-friend-server
+app_version: 1.0.0
+app_mode: debug
+api_addr: 0.0.0.0:8888
+
+db:
+  driver: postgres
+  host: 127.0.0.1
+  port: 5432
+  user: postgres
+  password: postgres
+  db_name: postgres
+  init_table: true
+
+db-test:
+  driver: postgres
+  host: 127.0.0.1
+  port: 5432
+  user: postgres
+  password: postgres
+  db_name: test_postgres
+  init_table: false
+
+redis:
+  addr: 127.0.0.1:6379
+  password:
+  db: 0
+
+log:
+  file_path: ./runtime/log
+  file_ext: log
+  info_filename: info
+  warn_filename: warn
+  err_filename: err

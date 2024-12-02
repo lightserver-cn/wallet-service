@@ -149,6 +149,8 @@ sh ./run.sh
 golangci-lint run --config=.golangci.yaml
 ```
 
+![PostgreSQL](./pics/GolangciLint.jpg)
+
 ### 单元测试
 
 单元测试使用 Go 的内置测试包编写。运行测试：
@@ -160,6 +162,8 @@ golangci-lint run --config=.golangci.yaml
 ```shell
 go test ./... -race -cover
 ```
+
+![PostgreSQL](./pics/GoTest.jpg)
 
 ### Goroutine 泄漏检查
 
